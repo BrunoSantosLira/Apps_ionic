@@ -1,0 +1,32 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="danger">
+    <ion-title>Jornal 24 horas</ion-title>
+    <ion-menu-button slot="start" color="dark"></ion-menu-button>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-toolbar color="warning" class="titulo_noticia">
+    <ion-title style="font-weight: bold; font-size: 18px;" >Economia e Política</ion-title>
+    
+  </ion-toolbar>
+  <!--Tecnologia-->
+  <ion-card  *ngFor="let n of itens_economia">
+    
+    <ion-label  (click)="openLink(n.link)">
+      <ion-card-header color="warning">
+        <ion-label class="titulo_noticia">{{n.title}}</ion-label>
+      </ion-card-header>
+      
+      <ion-card-content>
+        <ion-img [src]="n['enclosure']['@attributes']['url']"></ion-img>
+        <ion-badge color="danger">{{n.pubDate}}</ion-badge>
+        <ion-badge color="warning" style="margin-top: 12px;">Gazeta</ion-badge>
+      </ion-card-content>  
+
+    </ion-label>
+
+  </ion-card>
+
+</ion-content>
