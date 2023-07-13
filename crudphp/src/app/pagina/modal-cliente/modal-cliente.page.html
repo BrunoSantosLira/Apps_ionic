@@ -1,0 +1,25 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-button slot="end" (click)="fecharModal()">Fechar Modal</ion-button>
+    <ion-label style="padding: 5px; font-size: 18px; font-weight: bold;">{{atualizar ? "Atualizar Cliente" : "Novo Cliente"}}</ion-label>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <form #f="ngForm" (ngSubmit)="enviando(f)">
+    <ion-item>
+      <ion-label position="floating">Nome:</ion-label>
+      <ion-input [(ngModel)]="dados.nome" name="nome"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Cidade:</ion-label>
+      <ion-input [(ngModel)]="dados.cidade" name="cidade"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Email:</ion-label>
+      <ion-input [(ngModel)]="dados.email" name="email"></ion-input>
+    </ion-item>
+    <ion-button fill="outline" expand="block" type="submit">{{atualizar ? "Atualizar" : "Cadastrar"}}</ion-button>
+  </form>
+
+</ion-content>
